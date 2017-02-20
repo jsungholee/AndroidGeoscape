@@ -105,4 +105,43 @@
         android:layout_alignEnd="@+id/updateButton"
         android:onClick="gotoPostNewJob" />
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="10dp"
+        android:layout_below="@id/button5"
+        android:layout_marginBottom="0dp">
+
+        <Button
+            android:background="@drawable/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/search_btn"
+            android:textColor="@android:color/white"
+            android:layout_weight="0" />
+
+        <Button
+            android:background="@drawable/plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_job_btn"
+            android:textColor="@android:color/white"
+            android:layout_weight="0" />
+
+        <Button
+            android:background="@drawable/user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="30dp"
+            android:id="@+id/profile_btn"
+            android:onClick=""
+            android:layout_weight="0" />
+    </LinearLayout>
+
 </RelativeLayout>

@@ -3,10 +3,12 @@ package com.lawnscape;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,6 +30,7 @@ public class ProfileActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        Button add_job_btn = (Button) findViewById(R.id.add_job_btn);
 
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
@@ -86,6 +89,13 @@ public class ProfileActivity extends Activity {
                 }
             }
         };
+
+        add_job_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this, PostJobActivity.class));
+            }
+        });
     }
     @Override
     public void onStart() {
