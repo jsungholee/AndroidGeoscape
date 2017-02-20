@@ -1,9 +1,12 @@
 package com.lawnscape;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,6 +24,7 @@ public class PostJobActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_job);
+        Button profile_btn = (Button)findViewById(R.id.profile_btn);
 
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
@@ -40,6 +44,22 @@ public class PostJobActivity extends Activity {
                 }
             }
         };
+
+        profile_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PostJobActivity.this, ProfileActivity.class));
+            }
+        });
+
+        /* Fragment NavBar (Broken)
+        // guide followed from https://yout.be/tXpw4cEvecY
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        FragmentNavBar fragmentNavBar = new FragmentNavBar();
+        fragmentTransaction.add(fragmentNavBar, "nav bar");
+        fragmentTransaction.commit();
+        */
     }
     @Override
     public void onStart() {
