@@ -3,6 +3,9 @@ package com.lawnscape;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -43,6 +46,29 @@ public class PostJobActivity extends Activity {
                 }
             }
         };
+
+        BottomNavigationView bottomNavigationView = (BottomNavigationView)
+                findViewById(R.id.bot_navigation);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.add_job_nav_bar:
+                                Intent job = new Intent(PostJobActivity.this, PostJobActivity.class);
+                                startActivity(job);
+                                break;
+                            case R.id.profile_nav_bar:
+                                Intent prof = new Intent(PostJobActivity.this,
+                                        ViewMyProfileActivity.class);
+                                startActivity(prof);
+                                break;
+                        }
+                        return true;
+                    }
+                }
+        );
     }
     @Override
     public void onStart() {
