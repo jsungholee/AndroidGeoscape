@@ -42,7 +42,6 @@
     <com.beardedhen.androidbootstrap.BootstrapButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log In"
         android:layout_marginBottom="56dp"
         android:id="@+id/loginbutton"
         android:onClick="login"
@@ -54,6 +53,7 @@
         app:bootstrapBrand="primary"
         app:bootstrapSize="lg"
         app:buttonMode="regular"
+        app:bootstrapText="Log In"
         app:showOutline="false"
         app:roundedCorners="true" />
 

@@ -1,92 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:text="Job Title"
+    <com.beardedhen.androidbootstrap.AwesomeTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/textView8"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/etEditPostJobTitle"
-        android:layout_alignStart="@+id/etEditPostJobTitle" />
+        android:layout_alignLeft="@id/etEditPostJobTitle"
+        android:layout_alignStart="@+id/etEditPostJobTitle"
+        app:bootstrapText="Job Title"
+        app:bootstrapBrand="info" />
 
-    <EditText
+    <com.beardedhen.androidbootstrap.BootstrapEditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:ems="10"
         android:id="@+id/etEditPostJobTitle"
+        android:layout_marginTop="12dp"
         android:hint="Job Title"
         android:layout_below="@+id/textView8"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignLeft="@+id/etEditPostJobDescription"
+        android:layout_alignStart="@+id/etEditPostJobDescription"
+        android:layout_alignRight="@+id/etEditPostJobDescription"
+        android:layout_alignEnd="@+id/etEditPostJobDescription"
+        app:bootstrapBrand="regular"
+        app:bootstrapSize="lg"
+        app:roundedCorners="true" />
 
-    <EditText
+    <com.beardedhen.androidbootstrap.AwesomeTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/etEditPostJobDescription"
-        android:hint="Put a concise job description here, anything you want to say"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/textView19"
-        android:layout_alignStart="@+id/textView19" />
+        android:id="@+id/textView9"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/etEditPostJobTitle"
+        android:layout_alignLeft="@+id/etEditPostJobDescription"
+        android:layout_alignStart="@+id/etEditPostJobDescription"
+        android:layout_marginBottom="12dp"
+        app:bootstrapText="Location"
+        app:bootstrapBrand="info" />
 
-    <TextView
-        android:text="Description"
+    <com.beardedhen.androidbootstrap.BootstrapEditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:id="@+id/etEditPostJobLocation"
+        android:hint="Location of job"
+        android:layout_below="@+id/textView9"
+        android:layout_alignLeft="@+id/etEditPostJobDescription"
+        android:layout_alignStart="@+id/etEditPostJobDescription"
+        android:layout_alignRight="@+id/etEditPostJobDescription"
+        android:layout_alignEnd="@+id/etEditPostJobDescription"
+        app:bootstrapSize="lg"
+        app:roundedCorners="true"
+        app:bootstrapBrand="regular" />
+
+    <com.beardedhen.androidbootstrap.AwesomeTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView19"
         android:layout_marginBottom="12dp"
         android:layout_above="@+id/etEditPostJobDescription"
-        android:layout_alignLeft="@+id/etEditPostJobLocation"
-        android:layout_alignStart="@+id/etEditPostJobLocation" />
+        android:layout_alignLeft="@+id/etEditPostJobDescription"
+        android:layout_alignStart="@+id/etEditPostJobDescription"
+        app:bootstrapText="Description"
+        app:bootstrapBrand="info" />
 
-    <Button
-        android:text="Post Changes"
+    <com.beardedhen.androidbootstrap.BootstrapEditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:hint="Put a concise job description here, anything you want to say"
+        android:id="@+id/etEditPostJobDescription"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        app:bootstrapBrand="regular"
+        app:bootstrapSize="lg"
+        app:roundedCorners="true" />
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/buttonPostEditsToJob"
         android:onClick="postChanges"
+        android:layout_marginTop="47dp"
         android:layout_below="@+id/etEditPostJobDescription"
-        android:layout_alignLeft="@+id/etEditPostJobDescription"
-        android:layout_alignStart="@+id/etEditPostJobDescription"
-        android:layout_marginTop="44dp"
-        android:layout_alignRight="@+id/etEditPostJobDescription"
-        android:layout_alignEnd="@+id/etEditPostJobDescription" />
+        android:layout_centerHorizontal="true"
+        app:bootstrapText="Post Changes"
+        app:bootstrapBrand="primary"
+        app:roundedCorners="true"
+        app:bootstrapSize="lg" />
 
-    <Button
-        android:text="Return"
+    <com.beardedhen.androidbootstrap.BootstrapButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonPostEditsToJob"
-        android:layout_toRightOf="@+id/textView19"
-        android:layout_toEndOf="@+id/textView19"
         android:layout_marginTop="26dp"
         android:id="@+id/button6"
-        android:onClick="dontChange" />
-
-    <TextView
-        android:text="Location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView9"
-        android:layout_marginTop="17dp"
-        android:layout_below="@+id/etEditPostJobTitle"
-        android:layout_alignRight="@+id/textView8"
-        android:layout_alignEnd="@+id/textView8" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/etEditPostJobLocation"
-        android:hint="Location of job"
-        android:layout_below="@+id/textView9"
-        android:layout_alignLeft="@+id/etEditPostJobTitle"
-        android:layout_alignStart="@+id/etEditPostJobTitle" />
+        android:onClick="dontChange"
+        android:layout_below="@+id/buttonPostEditsToJob"
+        android:layout_centerHorizontal="true"
+        app:bootstrapSize="lg"
+        app:roundedCorners="true"
+        app:bootstrapBrand="danger"
+        app:bootstrapText="Cancel" />
 
 </RelativeLayout>
